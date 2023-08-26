@@ -22,11 +22,9 @@ Signed-off-by: Robert Marko <robimarko@gmail.com>
  drivers/net/dsa/mv88e6xxx/global2_scratch.c | 31 +++++++++++++++++++++
  3 files changed, 37 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/dsa/mv88e6xxx/chip.c b/drivers/net/dsa/mv88e6xxx/chip.c
-index 43d126628610..b3803101d612 100644
 --- a/drivers/net/dsa/mv88e6xxx/chip.c
 +++ b/drivers/net/dsa/mv88e6xxx/chip.c
-@@ -3409,7 +3409,10 @@ static int mv88e6xxx_mdio_register(struct mv88e6xxx_chip *chip,
+@@ -3424,7 +3424,10 @@ static int mv88e6xxx_mdio_register(struc
  
  	if (external) {
  		mv88e6xxx_reg_lock(chip);
@@ -38,11 +36,9 @@ index 43d126628610..b3803101d612 100644
  		mv88e6xxx_reg_unlock(chip);
  
  		if (err)
-diff --git a/drivers/net/dsa/mv88e6xxx/global2.h b/drivers/net/dsa/mv88e6xxx/global2.h
-index f3e27573a386..e0649f21f28e 100644
 --- a/drivers/net/dsa/mv88e6xxx/global2.h
 +++ b/drivers/net/dsa/mv88e6xxx/global2.h
-@@ -370,6 +370,8 @@ extern const struct mv88e6xxx_gpio_ops mv88e6352_gpio_ops;
+@@ -371,6 +371,8 @@ extern const struct mv88e6xxx_gpio_ops m
  
  int mv88e6xxx_g2_scratch_gpio_set_smi(struct mv88e6xxx_chip *chip,
  				      bool external);
@@ -51,11 +47,9 @@ index f3e27573a386..e0649f21f28e 100644
  int mv88e6xxx_g2_atu_stats_set(struct mv88e6xxx_chip *chip, u16 kind, u16 bin);
  int mv88e6xxx_g2_atu_stats_get(struct mv88e6xxx_chip *chip, u16 *stats);
  
-diff --git a/drivers/net/dsa/mv88e6xxx/global2_scratch.c b/drivers/net/dsa/mv88e6xxx/global2_scratch.c
-index eda710062933..dc3f4645fa52 100644
 --- a/drivers/net/dsa/mv88e6xxx/global2_scratch.c
 +++ b/drivers/net/dsa/mv88e6xxx/global2_scratch.c
-@@ -289,3 +289,34 @@ int mv88e6xxx_g2_scratch_gpio_set_smi(struct mv88e6xxx_chip *chip,
+@@ -289,3 +289,34 @@ int mv88e6xxx_g2_scratch_gpio_set_smi(st
  
  	return mv88e6xxx_g2_scratch_write(chip, misc_cfg, val);
  }
@@ -90,6 +84,3 @@ index eda710062933..dc3f4645fa52 100644
 +
 +	return mv88e6xxx_g2_scratch_write(chip, misc_cfg, val);
 +}
--- 
-2.34.1
-

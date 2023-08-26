@@ -20,8 +20,6 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
  drivers/net/phy/at803x.c | 76 +++++++++++++++++++++++++++++++++++-----
  1 file changed, 67 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/net/phy/at803x.c b/drivers/net/phy/at803x.c
-index 052b2eb9f101f..3f3d4c164df40 100644
 --- a/drivers/net/phy/at803x.c
 +++ b/drivers/net/phy/at803x.c
 @@ -51,6 +51,8 @@
@@ -61,7 +59,7 @@ index 052b2eb9f101f..3f3d4c164df40 100644
  	struct regulator_dev *vddio_rdev;
  	struct regulator_dev *vddh_rdev;
  	struct regulator *vddio;
-@@ -784,7 +798,33 @@ static int at803x_probe(struct phy_device *phydev)
+@@ -784,7 +798,33 @@ static int at803x_probe(struct phy_devic
  			return ret;
  	}
  
@@ -95,7 +93,7 @@ index 052b2eb9f101f..3f3d4c164df40 100644
  }
  
  static void at803x_remove(struct phy_device *phydev)
-@@ -797,6 +837,7 @@ static void at803x_remove(struct phy_device *phydev)
+@@ -797,6 +837,7 @@ static void at803x_remove(struct phy_dev
  
  static int at803x_get_features(struct phy_device *phydev)
  {
@@ -103,7 +101,7 @@ index 052b2eb9f101f..3f3d4c164df40 100644
  	int err;
  
  	err = genphy_read_abilities(phydev);
-@@ -823,12 +864,13 @@ static int at803x_get_features(struct phy_device *phydev)
+@@ -823,12 +864,13 @@ static int at803x_get_features(struct ph
  	 * As a result of that, ESTATUS_1000_XFULL is set
  	 * to 1 even when operating in copper TP mode.
  	 *
@@ -122,7 +120,7 @@ index 052b2eb9f101f..3f3d4c164df40 100644
  	return 0;
  }
  
-@@ -892,15 +934,18 @@ static int at8031_pll_config(struct phy_device *phydev)
+@@ -892,15 +934,18 @@ static int at8031_pll_config(struct phy_
  
  static int at803x_config_init(struct phy_device *phydev)
  {
@@ -144,7 +142,7 @@ index 052b2eb9f101f..3f3d4c164df40 100644
  		phy_unlock_mdio_bus(phydev);
  		if (ret)
  			return ret;
-@@ -959,6 +1004,7 @@ static int at803x_ack_interrupt(struct phy_device *phydev)
+@@ -959,6 +1004,7 @@ static int at803x_ack_interrupt(struct p
  
  static int at803x_config_intr(struct phy_device *phydev)
  {
@@ -152,7 +150,7 @@ index 052b2eb9f101f..3f3d4c164df40 100644
  	int err;
  	int value;
  
-@@ -975,6 +1021,10 @@ static int at803x_config_intr(struct phy_device *phydev)
+@@ -975,6 +1021,10 @@ static int at803x_config_intr(struct phy
  		value |= AT803X_INTR_ENABLE_DUPLEX_CHANGED;
  		value |= AT803X_INTR_ENABLE_LINK_FAIL;
  		value |= AT803X_INTR_ENABLE_LINK_SUCCESS;
@@ -163,7 +161,7 @@ index 052b2eb9f101f..3f3d4c164df40 100644
  
  		err = phy_write(phydev, AT803X_INTR_ENABLE, value);
  	} else {
-@@ -1107,8 +1157,12 @@ static int at803x_read_specific_status(struct phy_device *phydev)
+@@ -1107,8 +1157,12 @@ static int at803x_read_specific_status(s
  
  static int at803x_read_status(struct phy_device *phydev)
  {
@@ -176,7 +174,7 @@ index 052b2eb9f101f..3f3d4c164df40 100644
  	/* Update the link, but return if there was an error */
  	err = genphy_update_link(phydev);
  	if (err)
-@@ -1162,6 +1216,7 @@ static int at803x_config_mdix(struct phy_device *phydev, u8 ctrl)
+@@ -1162,6 +1216,7 @@ static int at803x_config_mdix(struct phy
  
  static int at803x_config_aneg(struct phy_device *phydev)
  {
@@ -184,7 +182,7 @@ index 052b2eb9f101f..3f3d4c164df40 100644
  	int ret;
  
  	ret = at803x_config_mdix(phydev, phydev->mdix_ctrl);
-@@ -1178,6 +1233,9 @@ static int at803x_config_aneg(struct phy_device *phydev)
+@@ -1178,6 +1233,9 @@ static int at803x_config_aneg(struct phy
  			return ret;
  	}
  

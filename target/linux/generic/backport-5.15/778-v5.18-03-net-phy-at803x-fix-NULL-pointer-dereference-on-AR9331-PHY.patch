@@ -46,11 +46,9 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  drivers/net/phy/at803x.c | 6 ++++++
  1 file changed, 6 insertions(+)
 
-diff --git a/drivers/net/phy/at803x.c b/drivers/net/phy/at803x.c
-index 6a467e7817a6a..59fe356942b51 100644
 --- a/drivers/net/phy/at803x.c
 +++ b/drivers/net/phy/at803x.c
-@@ -2072,6 +2072,8 @@ static struct phy_driver at803x_driver[] = {
+@@ -2059,6 +2059,8 @@ static struct phy_driver at803x_driver[]
  	/* ATHEROS AR9331 */
  	PHY_ID_MATCH_EXACT(ATH9331_PHY_ID),
  	.name			= "Qualcomm Atheros AR9331 built-in PHY",
@@ -59,7 +57,7 @@ index 6a467e7817a6a..59fe356942b51 100644
  	.suspend		= at803x_suspend,
  	.resume			= at803x_resume,
  	.flags			= PHY_POLL_CABLE_TEST,
-@@ -2087,6 +2089,8 @@ static struct phy_driver at803x_driver[] = {
+@@ -2074,6 +2076,8 @@ static struct phy_driver at803x_driver[]
  	/* Qualcomm Atheros QCA9561 */
  	PHY_ID_MATCH_EXACT(QCA9561_PHY_ID),
  	.name			= "Qualcomm Atheros QCA9561 built-in PHY",
@@ -68,7 +66,7 @@ index 6a467e7817a6a..59fe356942b51 100644
  	.suspend		= at803x_suspend,
  	.resume			= at803x_resume,
  	.flags			= PHY_POLL_CABLE_TEST,
-@@ -2151,6 +2155,8 @@ static struct phy_driver at803x_driver[] = {
+@@ -2138,6 +2142,8 @@ static struct phy_driver at803x_driver[]
  	PHY_ID_MATCH_EXACT(QCA8081_PHY_ID),
  	.name			= "Qualcomm QCA8081",
  	.flags			= PHY_POLL_CABLE_TEST,

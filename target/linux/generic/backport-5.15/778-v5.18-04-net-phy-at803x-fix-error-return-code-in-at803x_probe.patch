@@ -17,7 +17,7 @@ Signed-off-by: Jakub Kicinski <kuba@kernel.org>
 
 --- a/drivers/net/phy/at803x.c
 +++ b/drivers/net/phy/at803x.c
-@@ -749,8 +749,10 @@ static int at803x_probe(struct phy_devic
+@@ -858,8 +858,10 @@ static int at803x_probe(struct phy_devic
  		int ccr = phy_read(phydev, AT803X_REG_CHIP_CONFIG);
  		int mode_cfg;
  

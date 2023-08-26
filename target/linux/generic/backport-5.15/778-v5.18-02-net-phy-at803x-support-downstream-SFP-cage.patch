@@ -25,7 +25,7 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
  #include <dt-bindings/net/qca-ar803x.h>
  
  #define AT803X_SPECIFIC_FUNCTION_CONTROL	0x10
-@@ -555,6 +557,55 @@ static int at8031_register_regulators(st
+@@ -664,6 +666,55 @@ static int at8031_register_regulators(st
  	return 0;
  }
  
@@ -81,7 +81,7 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
  static int at803x_parse_dt(struct phy_device *phydev)
  {
  	struct device_node *node = phydev->mdio.dev.of_node;
-@@ -662,6 +713,11 @@ static int at803x_parse_dt(struct phy_de
+@@ -771,6 +822,11 @@ static int at803x_parse_dt(struct phy_de
  			phydev_err(phydev, "failed to get VDDIO regulator\n");
  			return PTR_ERR(priv->vddio);
  		}
